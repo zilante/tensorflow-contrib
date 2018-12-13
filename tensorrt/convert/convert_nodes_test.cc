@@ -2358,9 +2358,9 @@ TEST_F(OpConverterTest, ConvertStridedSlice) {
   }
 
   // Get nodedef for StridedSlice layer.
-  auto get_strided_slice_nodedef = [](
-      int begin_mask = 0, int end_mask = 0, int ellipsis_mask = 0,
-      int new_axis_mask = 0, int shrink_axis_mask = 0) -> NodeDef {
+  auto get_strided_slice_nodedef =
+      [](int begin_mask = 0, int end_mask = 0, int ellipsis_mask = 0,
+         int new_axis_mask = 0, int shrink_axis_mask = 0) -> NodeDef {
     Scope s = Scope::NewRootScope();
     auto input = ops::Placeholder(s.WithOpName("input"), DT_FLOAT);
     auto begin = ops::Placeholder(s.WithOpName("begin"), DT_INT32);
